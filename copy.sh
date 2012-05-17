@@ -1,0 +1,2 @@
+cd $dotfiles
+cp * $HOME/

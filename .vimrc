@@ -1,9 +1,6 @@
-filetype off
-""" pathogen をコメントアウト
-" call pathogen#runtime_append_all_bundles()
-" call pathogen#helptags()
-" set helpfile=$VIMRUNTIME/doc/help.txt
- 
+""" Vundle '''
+set rtp+=~/.vim/vundle/
+call vundle#rc()
 filetype plugin on
 
 " 折り返さない
@@ -26,18 +23,15 @@ let b:match_ignorecase = 1
 let b:match_words="if:endif,foreach:endforeach,\<begin\>:\<end\>"
 filetype plugin on
  
-""" Vundle '''
-"set rtp+=~/.vim/vundle/
-"call vundle#rc()
-
 " 利用中のプラグインをBundle
-"Bundle 'Shougo/neocomplcache'
-"Bundle 'Shougo/unite.vim'
-"Bundle 'scrooloose/nerdcommenter'
-"Bundle 'tpope/vim-surround'
-"Bundle 'thinca/vim-quickrun'
-"Bundle 'thinca/vim-ref'
-"Bundle 'kana/vim-fakeclip'
+Bundle 'Shougo/neocomplcache'
+Bundle 'Shougo/unite.vim'
+Bundle 'scrooloose/nerdcommenter'
+Bundle 'tpope/vim-surround'
+Bundle 'thinca/vim-quickrun'
+Bundle 'thinca/vim-ref'
+Bundle 'kana/vim-fakeclip'
+Bundle 'scrooloose/syntastic'
 
 syntax on
 set clipboard=unnamed
@@ -149,3 +143,13 @@ nmap ,es :e ++enc=cp932<CR>
 nmap ,ej :e ++enc=iso-2022-jp<CR>
 " UTF-8
 nmap ,eu :e ++enc=utf-8<CR>
+ 
+
+" 文法チェック
+let g:syntastic_check_on_open=1
+let g:syntastic_enable_signs=1
+let g:syntastic_auto_loc_list=2
+let g:statline_syntastic=0
+let g:syntastic_mode_map = { 'mode': 'passive',
+                           \ 'active_filetypes': ['php'],
+                           \ 'passive_filetypes': [] }

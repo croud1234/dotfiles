@@ -1,0 +1,6 @@
+[color]
+	ui = true
+[diff]
+    external = git_diff_wrapper
+[pager]
+    diff =

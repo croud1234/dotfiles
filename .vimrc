@@ -1,8 +1,3 @@
-""" Vundle '''
-set rtp+=~/.vim/vundle/
-call vundle#rc()
-filetype plugin on
-
 " 折り返さない
 set nowrap
 
@@ -23,16 +18,6 @@ let b:match_ignorecase = 1
 let b:match_words="if:endif,foreach:endforeach,\<begin\>:\<end\>"
 filetype plugin on
  
-" 利用中のプラグインをBundle
-Bundle 'Shougo/neocomplcache'
-Bundle 'Shougo/unite.vim'
-Bundle 'scrooloose/nerdcommenter'
-Bundle 'tpope/vim-surround'
-Bundle 'thinca/vim-quickrun'
-Bundle 'thinca/vim-ref'
-Bundle 'kana/vim-fakeclip'
-Bundle 'scrooloose/syntastic'
-
 syntax on
 set clipboard=unnamed
 set number

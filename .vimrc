@@ -128,13 +128,3 @@ nmap ,es :e ++enc=cp932<CR>
 nmap ,ej :e ++enc=iso-2022-jp<CR>
 " UTF-8
 nmap ,eu :e ++enc=utf-8<CR>
- 
-
-" 文法チェック
-let g:syntastic_check_on_open=1
-let g:syntastic_enable_signs=1
-let g:syntastic_auto_loc_list=2
-let g:statline_syntastic=0
-let g:syntastic_mode_map = { 'mode': 'passive',
-                           \ 'active_filetypes': ['php'],
-                           \ 'passive_filetypes': [] }

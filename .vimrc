@@ -43,6 +43,9 @@ highlight PmenuSel ctermbg=red
 highlight PmenuSbar ctermbg=Gray
 highlight PmenuThumb ctermfg=White
 
+" 文字色
+highlight Comment ctermfg=Red ctermbg=White
+
 " タブ画面設定
 map <C-n> :tabe<CR>
 map <C-h> :tabp<CR>

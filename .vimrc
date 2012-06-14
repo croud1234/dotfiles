@@ -1,10 +1,10 @@
+colorscheme darkblue
 " 折り返さない
 set nowrap
 
 " タブ文字系
 set tabstop=4
 set shiftwidth=4
-
 " 
 set autoindent
 set expandtab
@@ -12,12 +12,15 @@ set shiftwidth=4
 set smarttab
 set smartindent
 
+
 " %で移動
 source $VIMRUNTIME/macros/matchit.vim
 let b:match_ignorecase = 1 
 let b:match_words="if:endif,foreach:endforeach,\<begin\>:\<end\>"
 filetype plugin on
  
+" 利用中のプラグインをBundle
+
 syntax on
 set clipboard=unnamed
 set number
@@ -43,9 +46,7 @@ highlight PmenuSel ctermbg=red
 highlight PmenuSbar ctermbg=Gray
 highlight PmenuThumb ctermfg=White
 
-" 文字色
-highlight Comment ctermfg=Red ctermbg=White
-
+highlight Comment cterm=reverse ctermfg=15
 " タブ画面設定
 map <C-n> :tabe<CR>
 map <C-h> :tabp<CR>
@@ -131,3 +132,13 @@ nmap ,es :e ++enc=cp932<CR>
 nmap ,ej :e ++enc=iso-2022-jp<CR>
 " UTF-8
 nmap ,eu :e ++enc=utf-8<CR>
+ 
+
+" 文法チェック
+let g:syntastic_check_on_open=1
+let g:syntastic_enable_signs=1
+let g:syntastic_auto_loc_list=2
+let g:statline_syntastic=0
+let g:syntastic_mode_map = { 'mode': 'passive',
+                           \ 'active_filetypes': ['php'],
+                           \ 'passive_filetypes': [] }

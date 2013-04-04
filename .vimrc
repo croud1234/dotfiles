@@ -1,18 +1,17 @@
-colorscheme darkblue
 " 折り返さない
 set nowrap
 
 " タブ文字系
 set tabstop=4
 set shiftwidth=4
-" 
-set autoindent
+
+"
 set expandtab
 set shiftwidth=4
 set smarttab
 set smartindent
 
-
+highlight Comment ctermfg=Red ctermbg=White
 " %で移動
 source $VIMRUNTIME/macros/matchit.vim
 let b:match_ignorecase = 1 
@@ -46,7 +45,6 @@ highlight PmenuSel ctermbg=red
 highlight PmenuSbar ctermbg=Gray
 highlight PmenuThumb ctermfg=White
 
-highlight Comment cterm=reverse ctermfg=15
 " タブ画面設定
 map <C-n> :tabe<CR>
 map <C-h> :tabp<CR>
@@ -57,6 +55,8 @@ hi TabLineSel  term=bold cterm=bold,underline ctermfg=LightGray ctermbg=DarkBlue
 hi TabLine term=reverse cterm=underline ctermfg=Black ctermfg=Gray ctermbg=black gui=underline guifg=Black guibg=gray
 hi TabLineFill term=reverse cterm=reverse,bold ctermfg=LightGray ctermbg=black gui=reverse,bold guifg=LightGray guibg=black
 hi TabLineInfo term=reverse ctermfg=Black ctermbg=LightBlue guifg=black guibg=lightblue
+
+highlight statusline   term=NONE cterm=NONE guifg=red ctermfg=yellow ctermbg=red
 
 " 文法チェック
 set makeprg=php\ -l\ %
@@ -121,7 +121,7 @@ if exists('&ambiwidth')
   set ambiwidth=double
 endif
 
-set ambiwidth=double
+"set ambiwidth=double
 
 " 開いているファイルの文字コードを指定して開きなおす
 " EUC-JP
@@ -142,3 +142,10 @@ let g:statline_syntastic=0
 let g:syntastic_mode_map = { 'mode': 'passive',
                            \ 'active_filetypes': ['php'],
                            \ 'passive_filetypes': [] }
+" 検索時に画面中央に移動
+nnoremap n nzzzv
+nnoremap N Nzzzv
+nnoremap * *zzzv
+nnoremap # #zzzv
+nnoremap g* g*zzzv
+nnoremap g# g#zzzv

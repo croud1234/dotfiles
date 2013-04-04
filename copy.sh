@@ -4,3 +4,5 @@ then
     mkdir $HOME/bin
 fi
 cp bin/* $HOME/bin
+
+source $HOME/.bash_profile
